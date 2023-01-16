@@ -189,7 +189,7 @@ body {
     flex-direction: column  ;
     max-width: 177px;
     position: fixed;
-    height: 100%;
+    height: calc(100% - 120px);
     overflow-y: auto;
     margin-left: 47px;  
 }
@@ -244,6 +244,10 @@ body {
     margin-right: 10px;
 }
 
+.side_menu {
+    margin-bottom: 50px;
+}
+
 .title_subsc_menu {
     font-style: normal;
     font-weight: 700;
@@ -270,6 +274,17 @@ body {
 
 .subsc_li:hover>.text_li {
     color: #FF0000;
+}
+
+.icon_setting {
+    width: 20px;
+    height: 20px;
+}
+
+.button_setting {
+    display: flex;
+    align-items: center;
+    border: none;
 }
 
 /* MAIN CONTAINER */
@@ -341,6 +356,7 @@ body {
     font-size: 26px;
     line-height: 33px;
     color: #19202C;
+    margin-right: 20px;
 }
 
 .card_video {
@@ -483,4 +499,29 @@ body {
 .video_recomen_all_user {
     width: 100%;
     margin-bottom: 50px;
+}
+
+.food_recomen_video {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #C2C2C2;
+}
+
+.subcribe {
+    background: #FF0000;
+    border-radius: 20px;
+    border: none;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.text_subscribe {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    padding: 15px 20px;
 }
