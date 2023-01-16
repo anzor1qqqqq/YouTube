@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="/js/script.js" defer></script>
 </head>
 <body>
@@ -176,19 +178,19 @@
     <div class="container_block">      
 
      <div class="contant_container">
-        <div class="user_recomen_video">
+        <section class="user_recomen_video swiper">
             <div class="header_user_recomen_video">
                 <div class="header_contant_user">
                     <img class="img_header_recomen" src="/img-subsc/user1.png" alt="">
                     <h1 class="title_header_recomen">Dollie Blair</h1>
                 </div>
                 <div class="contant_button_swipper">
-                    <button class="button_swipper">
+                    <button class="button_swipper prev">
                         <svg class="icon icon-swipper">
                             <use xlink:href="/img/sprite.svg#Left Arrow"></use>
                         </svg>
                     </button>
-                    <button class="button_swipper">
+                    <button class="button_swipper next">
                         <svg class="icon icon-swipper">
                             <use xlink:href="/img/sprite.svg#Right Arrow"></use>
                         </svg>
@@ -196,8 +198,8 @@
                 </div>
             </div>
 
-            <div class="container_user_video_recomen">
-                <div class="card_video">
+            <div class="container_user_video_recomen swiper-wrapper">
+                <div class="card_video swiper-slide">
                     <div class="contant_img_video">
                         <img class="img_video" src="/img-card-video/Cover.jpg" alt="">
                         <span class="text_time_video">4:15</span>
@@ -213,7 +215,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card_video">
+                <div class="card_video swiper-slide">
                     <div class="contant_img_video">
                         <img class="img_video" src="/img-card-video/video2.jpg" alt="">
                         <span class="text_time_video">8:00</span>
@@ -229,7 +231,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card_video">
+                <div class="card_video swiper-slide">
                     <div class="contant_img_video">
                         <img class="img_video" src="/img-card-video/video3.jpg" alt="">
                         <span class="text_time_video">5:32</span>
@@ -245,7 +247,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card_video">
+                <div class="card_video swiper-slide">
                     <div class="contant_img_video">
                         <img class="img_video" src="/img-card-video/video4.jpg" alt="">
                         <span class="text_time_video">6:40</span>
@@ -261,7 +263,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card_video">
+                <div class="card_video swiper-slide">
                     <div class="contant_img_video">
                         <img class="img_video" src="/img-card-video/video5.jpg" alt="">
                         <span class="text_time_video">1:45</span>
@@ -277,7 +279,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card_video">
+                <div class="card_video swiper-slide">
                     <div class="contant_img_video">
                         <img class="img_video" src="/img-card-video/video6.jpg" alt="">
                         <span class="text_time_video">2:15</span>
@@ -294,10 +296,208 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+        
+        <section class="video_recomen_all_user swiper">
+                <div class="header_recomen_all_user">
+                    <h1 class="title_recomen_all_user">Recommended</h1>
+                    <div class="contant_button_swipper">
+                        <button class="button_swipper prev">
+                            <svg class="icon icon-swipper">
+                                <use xlink:href="/img/sprite.svg#Left Arrow"></use>
+                            </svg>
+                        </button>
+                        <button class="button_swipper next">
+                            <svg class="icon icon-swipper">
+                                <use xlink:href="/img/sprite.svg#Right Arrow"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="recomen_video_all_user swiper-wrapper">
+                    <!-- <div class="container_recomen_all_user_video"> -->
+
+                        <div class="cardBig swiper-slide">
+                            <div class="card_img">
+                                <img class="img_recomen_all_user" src="/img-card-video/recomen1.jpg" alt="">
+                                <span class="text_time_video">1:45</span>
+                            </div>
+                            <div class="video_recomen_all_user_about">
+                                <div class="title_recomen_all_user">
+                                    <h3 class="title_video">Dude You Re Getting A Telescope</h3>
+                                </div>
+                                <div class="text_about_recomen_all_user">
+                                    <div class="view_date_release_recomen_all_user">
+                                        <span class="video_recomen_all_user_time_about view_recomen_all_user">34k views </span>
+                                        <span class="video_recomen_all_user_time_about release_date_recomen_all_user">5 months ago</span>
+                                    </div>
+                                    <span class="author_video_recomen_all_user">Gussie French</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cardBig swiper-slide">
+                            <div class="card_img">
+                                <img class="img_recomen_all_user" src="/img-card-video/recomen2.jpg" alt="">
+                                <span class="text_time_video">1:45</span>
+                            </div>
+                            <div class="video_recomen_all_user_about">
+                                <div class="title_recomen_all_user">
+                                    <h3 class="title_video">Dude You Re Getting A Telescope</h3>
+                                </div>
+                                <div class="text_about_recomen_all_user">
+                                    <div class="view_date_release_recomen_all_user">
+                                        <span class="video_recomen_all_user_time_about view_recomen_all_user">34k views </span>
+                                        <span class="video_recomen_all_user_time_about release_date_recomen_all_user">5 months ago</span>
+                                    </div>
+                                    <span class="author_video_recomen_all_user">Gussie French</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cardBig swiper-slide">
+                            <div class="card_img">
+                                <img class="img_recomen_all_user" src="/img-card-video/recomen3.jpg" alt="">
+                                <span class="text_time_video">1:45</span>
+                            </div>
+                            <div class="video_recomen_all_user_about">
+                                <div class="title_recomen_all_user">
+                                    <h3 class="title_video">Dude You Re Getting A Telescope</h3>
+                                </div>
+                                <div class="text_about_recomen_all_user">
+                                    <div class="view_date_release_recomen_all_user">
+                                        <span class="video_recomen_all_user_time_about view_recomen_all_user">34k views </span>
+                                        <span class="video_recomen_all_user_time_about release_date_recomen_all_user">5 months ago</span>
+                                    </div>
+                                    <span class="author_video_recomen_all_user">Gussie French</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+        <section class="user_recomen_video swiper">
+            <div class="header_user_recomen_video">
+                <div class="header_contant_user">
+                    <img class="img_header_recomen" src="/img-subsc/user1.png" alt="">
+                    <h1 class="title_header_recomen">Dollie Blair</h1>
+                </div>
+                <div class="contant_button_swipper">
+                    <button class="button_swipper prev">
+                        <svg class="icon icon-swipper">
+                            <use xlink:href="/img/sprite.svg#Left Arrow"></use>
+                        </svg>
+                    </button>
+                    <button class="button_swipper next">
+                        <svg class="icon icon-swipper">
+                            <use xlink:href="/img/sprite.svg#Right Arrow"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="container_user_video_recomen swiper-wrapper">
+                <div class="card_video swiper-slide">
+                    <div class="contant_img_video">
+                        <img class="img_video" src="/img-card-video/Cover.jpg" alt="">
+                        <span class="text_time_video">4:15</span>
+                    </div>
+                    <div class="about_video">
+                        <h3 class="title_video">A Brief History Of Creation</h3>
+                        <div class="video_time_about">
+                            <div class="view_yime">
+                            <span class="video_time_about_text view">80k views</span>
+                            <span class="video_time_about_text release_date">3 days ago</span>
+                            </div>
+                            <span class="video_time_about_text author_video">Dollie Blair</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_video swiper-slide">
+                    <div class="contant_img_video">
+                        <img class="img_video" src="/img-card-video/video2.jpg" alt="">
+                        <span class="text_time_video">8:00</span>
+                    </div>
+                    <div class="about_video">
+                        <h3 class="title_video">Selecting The Right Hotel</h3>
+                        <div class="video_time_about">
+                            <div class="view_yime">
+                            <span class="video_time_about_text view">123k views</span>
+                            <span class="video_time_about_text release_date">1 months ago</span>
+                            </div>
+                            <span class="video_time_about_text author_video">Dollie Blair</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_video swiper-slide">
+                    <div class="contant_img_video">
+                        <img class="img_video" src="/img-card-video/video3.jpg" alt="">
+                        <span class="text_time_video">5:32</span>
+                    </div>
+                    <div class="about_video">
+                        <h3 class="title_video">Asteroids</h3>
+                        <div class="video_time_about">
+                            <div class="view_yime">
+                            <span class="video_time_about_text view">43k views</span>
+                            <span class="video_time_about_text release_date">12 days ago</span>
+                            </div>
+                            <span class="video_time_about_text author_video">Dollie Blair</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_video swiper-slide">
+                    <div class="contant_img_video">
+                        <img class="img_video" src="/img-card-video/video4.jpg" alt="">
+                        <span class="text_time_video">6:40</span>
+                    </div>
+                    <div class="about_video">
+                        <h3 class="title_video">Telescopes 101</h3>
+                        <div class="video_time_about">
+                            <div class="view_yime">
+                            <span class="video_time_about_text view">11k views</span>
+                            <span class="video_time_about_text release_date">6 months ago</span>
+                            </div>
+                            <span class="video_time_about_text author_video">Dollie Blair</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_video swiper-slide">
+                    <div class="contant_img_video">
+                        <img class="img_video" src="/img-card-video/video5.jpg" alt="">
+                        <span class="text_time_video">1:45</span>
+                    </div>
+                    <div class="about_video">
+                        <h3 class="title_video">Medical Care Is Just</h3>
+                        <div class="video_time_about">
+                            <div class="view_yime">
+                            <span class="video_time_about_text view">18k views</span>
+                            <span class="video_time_about_text release_date">2 days ago</span>
+                            </div>
+                            <span class="video_time_about_text author_video">Dollie Blair</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_video swiper-slide">
+                    <div class="contant_img_video">
+                        <img class="img_video" src="/img-card-video/video6.jpg" alt="">
+                        <span class="text_time_video">2:15</span>
+                    </div>
+                    <div class="about_video">
+                        <h3 class="title_video">Moon Gazing</h3>
+                        <div class="video_time_about">
+                            <div class="view_yime">
+                            <span class="video_time_about_text view">67k views</span>
+                            <span class="video_time_about_text release_date">4 months ago</span>
+                            </div>
+                            <span class="video_time_about_text author_video">Dollie Blair</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
     </div>
-
     </div> 
     </main>
 </body>

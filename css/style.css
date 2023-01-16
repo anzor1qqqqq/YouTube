@@ -275,12 +275,13 @@ body {
 /* MAIN CONTAINER */
 
 .contant_container {
-    max-width: 100%;
+    max-width: 97%;
     margin-left: 50px;
 }
 
 .user_recomen_video {
     width: 100%;
+    margin-bottom: 50px;
 }
 
 .header_user_recomen_video {
@@ -320,6 +321,10 @@ body {
     cursor: pointer;
 }
 
+.button_swipper:hover {
+    background-color: #FF0000;
+}
+
 .icon-swipper {
     fill: #F2F2F2;
     width: 16px;
@@ -342,10 +347,6 @@ body {
     display: flex;
     flex-direction: column;
     width: 250px;
-}
-
-.card_video:not(:last-child) {
-    margin-right: 20px;
 }
 
 .container_user_video_recomen {
@@ -413,4 +414,73 @@ body {
     width: 250px;
     height: 200px;
     object-fit: cover;
+}
+
+.swiper-slide {
+    max-width: 250px;
+}
+
+/* RECOMEN VIDEO */
+
+.title_recomen_all_user {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 33px;
+    color: #19202C;
+}
+
+.header_recomen_all_user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.cardBig {
+    max-width: 500px;
+    height: 300px;
+}
+
+
+.img_recomen_all_user {
+    max-width: 500px;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card_img {
+    position: relative;
+}
+
+.text_about_recomen_all_user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.video_recomen_all_user_time_about {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #C2C2C2;
+}
+
+.author_video_recomen_all_user {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #C2C2C2;
+}
+
+.recomen_video_all_user {
+    display: flex;
+}
+
+.video_recomen_all_user {
+    width: 100%;
+    margin-bottom: 50px;
 }
