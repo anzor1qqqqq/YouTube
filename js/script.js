@@ -1,8 +1,6 @@
 'use strict'
 
 const sliderSwiperMenu = () => {
-  const containerUserVideoRecomen = document.querySelector('.container_user_video_recomen');
-
   const swiperSlide = new Swiper('.video_recomen_all_user', {
     loop: true,
     slidesPerView: 1, 
