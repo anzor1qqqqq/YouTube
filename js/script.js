@@ -1,6 +1,9 @@
 'use strict'
 
-const swiperSlide = new Swiper('.video_recomen_all_user', {
+const sliderSwiperMenu = () => {
+  const containerUserVideoRecomen = document.querySelector('.container_user_video_recomen');
+
+  const swiperSlide = new Swiper('.video_recomen_all_user', {
     loop: true,
     slidesPerView: 1, 
     spaceBetween: 43,  
@@ -20,7 +23,7 @@ const swiperSlide = new Swiper('.video_recomen_all_user', {
     }
 });  
 
-const sliderRecomen = new Swiper('.user_recomen_video', {
+  const sliderRecomen = new Swiper('.user_recomen_video', {
     loop: true,
     slidesPerView: 1,
     spaceBetween: 20,
@@ -52,7 +55,7 @@ const sliderRecomen = new Swiper('.user_recomen_video', {
     }
 });
 
-const sliderFood = new Swiper('.recomen_food', {
+  const sliderFood = new Swiper('.recomen_food', {
   loop: true,
   slidesPerView: 1,
   spaceBetween: 20,
@@ -84,14 +87,15 @@ const sliderFood = new Swiper('.recomen_food', {
   }
 });
 
-const containerUserVideoRecomen = document.querySelector('.container_user_video_recomen');
+  if (document.documentElement.offsetWidth <= 650) {
+    sliderRecomen.destroy();
+    swiperSlide.destroy();
+    sliderFood.destroy();
+  } else {
+    sliderRecomen.enable();
+    swiperSlide.enable();
+    sliderFood.enable();
+  }  
+};
 
-if (document.documentElement.offsetWidth <= 650) {
-  sliderRecomen.destroy();
-  swiperSlide.destroy();
-  sliderFood.destroy();
-} else {
-  sliderRecomen.enable();
-  swiperSlide.enable();
-  sliderFood.enable();
-}
+sliderSwiperMenu();
