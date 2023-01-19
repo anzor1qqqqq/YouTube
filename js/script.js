@@ -1,6 +1,6 @@
 'use strict'
 
-new Swiper('.video_recomen_all_user', {
+const swiperSlide = new Swiper('.video_recomen_all_user', {
     loop: true,
     slidesPerView: 1, 
     spaceBetween: 43,  
@@ -11,10 +11,8 @@ new Swiper('.video_recomen_all_user', {
     },
 
     breakpoints: {
-      // when window width is >= 640px
-      1100: {
+      1000: {
         slidesPerView: 2,
-       /*  spaceBetween: 20, */
       },
       1600: {
         slidesPerView: 3,
@@ -22,7 +20,7 @@ new Swiper('.video_recomen_all_user', {
     }
 });  
 
-new Swiper('.user_recomen_video', {
+const sliderRecomen = new Swiper('.user_recomen_video', {
     loop: true,
     slidesPerView: 1,
     spaceBetween: 20,
@@ -33,30 +31,67 @@ new Swiper('.user_recomen_video', {
     },
 
     breakpoints: {
-      // when window width is >= 640px
       800: {
         slidesPerView: 2,
-       /*  spaceBetween: 20, */
       },
 
       1100: {
         slidesPerView: 3,
-       /*  spaceBetween: 20, */
       },
 
       1300: {
         slidesPerView: 4,
-       /*  spaceBetween: 20, */
       },
 
       1600: {
         slidesPerView: 5,
-       /*  spaceBetween: 20, */
       },
       1900: {
         slidesPerView: 6,
-        /* spaceBetween: 20, */
       },
     }
 });
 
+const sliderFood = new Swiper('.recomen_food', {
+  loop: true,
+  slidesPerView: 1,
+  spaceBetween: 20,
+
+  navigation: {
+    nextEl: '.next',
+    prevEl: '.prev',
+  },
+
+  breakpoints: {
+    800: {
+      slidesPerView: 2,
+    },
+
+    1100: {
+      slidesPerView: 3,
+    },
+
+    1300: {
+      slidesPerView: 4,
+    },
+
+    1600: {
+      slidesPerView: 5,
+    },
+    1900: {
+      slidesPerView: 6,
+    },
+  }
+});
+
+const containerUserVideoRecomen = document.querySelector('.container_user_video_recomen');
+
+if (document.documentElement.offsetWidth <= 650) {
+  sliderRecomen.destroy();
+  swiperSlide.destroy();
+  sliderFood.destroy();
+} else {
+  sliderRecomen.enable();
+  swiperSlide.enable();
+  sliderFood.enable();
+}
