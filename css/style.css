@@ -99,6 +99,31 @@ body {
     border: solid 0.5px;
     cursor: pointer;
     border-left: none;
+    padding-top: 8px;
+}
+
+.clear_search_button {
+    display: none;
+    border: solid 0.5px;
+    border-left: none;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.clear_search_button.is-open {
+    display: block;
+}
+
+.clear_search_button:hover {
+    opacity: 0.5;
+}
+
+.close_input {
+    display: none;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 22px;
 }
 
 .icon-search {
@@ -108,8 +133,8 @@ body {
     opacity: 0.7;
 }
 
-.icon-search:hover {
-    opacity: 0.24;
+.input_search_button:hover {
+    opacity: 0.5;
 }
 
 .form_input {
@@ -352,7 +377,6 @@ body {
 
 .user_recomen_video {
     width: 100%;
-    margin-bottom: 50px;
 }
 
 .recomen_food {
@@ -419,11 +443,15 @@ body {
 .card_video {
     display: flex;
     flex-direction: column;
-    width: 250px;
+    flex-basis: 30%;
+    margin-bottom: 40px;
 }
 
 .container_user_video_recomen {
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 .contant_img_video {
@@ -512,6 +540,7 @@ body {
 
 .cardBig {
     max-width: 100%;
+    flex-basis: 30%;
 }
 
 .img_recomen_all_user {
@@ -549,6 +578,9 @@ body {
 
 .recomen_video_all_user {
     display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .video_recomen_all_user {
@@ -642,6 +674,12 @@ body {
     }
 }
 
+@media (max-width: 800px) {
+    .card_video {
+        flex-basis: 47%;
+    }
+}
+
 @media (max-width: 650px) {
     .input_search {
         display: none;
@@ -720,8 +758,13 @@ body {
         opacity: 1; 
     }
 
+    .card_video {
+        width: 85%;
+    }
+
     .container_user_video_recomen, .recomen_video_all_user   {
         flex-direction: column;
+        align-items: center;
     }
 
     .contant_button_swipper, .contant_button_swipper {
@@ -731,11 +774,28 @@ body {
     .card_video:not(:last-child), .cardBig:not(:last-child)  {
         margin-bottom: 40px;
     }
+
+    .clear_search_button {
+        border: none;
+        background-color: #fff;
+    }
+
+    .clear_search_button:hover {
+        opacity: 1;
+    }
+
+    .input_search_button:hover {
+        opacity: 1;
+    }
 }
 
 @media(max-width: 450px) {
     .button_mobile_side_bar:not(:last-child) {
         margin-right: 35px;
+    }
+
+    .cardBig {
+        width: 85%;
     }
 }
 

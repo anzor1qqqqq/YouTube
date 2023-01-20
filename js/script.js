@@ -1,99 +1,87 @@
 'use strict'
 
-const sliderSwiperMenu = () => {
-  const swiperSlide = new Swiper('.video_recomen_all_user', {
-    loop: true,
-    slidesPerView: 1, 
-    spaceBetween: 43,  
+const searchFoo = () => {
+  const inputSearchButton = document.querySelector('.input_search_button');
+  const formInput = document.querySelector('.form_input');
+  const clearSearchButton = document.querySelector('.clear_search_button');
+  const inputSearch = document.querySelector('.input_search');
+  const headerImgLogo = document.querySelector('.header_img_logo');
+  const headerUserAvatar = document.querySelector('.header_user_avatar');
+  const closeInput = document.querySelector('.close_input');
 
-    navigation: {
-      nextEl: '.next',
-      prevEl: '.prev',
-    },
+  inputSearchButton.addEventListener('click', event => {
+    event.preventDefault();
+    if (document.documentElement.offsetWidth <= 650) {
+      formInput.style.flex = '1';
+      inputSearch.style.display = 'block';
+      inputSearch.style.border = 'none';
+      headerImgLogo.style.display = 'none';
+      headerUserAvatar.style.display = 'none';
+      closeInput.style.display = 'block';
+    };
+  });
 
-    breakpoints: {
-      1000: {
-        slidesPerView: 2,
-      },
-      1600: {
-        slidesPerView: 3,
-      },
+  inputSearch.addEventListener('keydown', () => {
+    if (inputSearch.value.length > 0) {
+      clearSearchButton.classList.add('is-open');
+    } else {
+      clearSearchButton.classList.remove('is-open');
     }
-});  
+  });
 
-  const sliderRecomen = new Swiper('.user_recomen_video', {
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 20,
+  clearSearchButton.addEventListener('click', event => {
+    event.preventDefault();
+    formInput.reset();
+    clearSearchButton.classList.remove('is-open');
+  });
 
-    navigation: {
-      nextEl: '.next',
-      prevEl: '.prev',
-    },
+  closeInput.addEventListener('click', event => {
+    event.preventDefault();
 
-    breakpoints: {
-      800: {
-        slidesPerView: 2,
-      },
-
-      1100: {
-        slidesPerView: 3,
-      },
-
-      1300: {
-        slidesPerView: 4,
-      },
-
-      1600: {
-        slidesPerView: 5,
-      },
-      1900: {
-        slidesPerView: 6,
-      },
-    }
-});
-
-  const sliderFood = new Swiper('.recomen_food', {
-  loop: true,
-  slidesPerView: 1,
-  spaceBetween: 20,
-
-  navigation: {
-    nextEl: '.next',
-    prevEl: '.prev',
-  },
-
-  breakpoints: {
-    800: {
-      slidesPerView: 2,
-    },
-
-    1100: {
-      slidesPerView: 3,
-    },
-
-    1300: {
-      slidesPerView: 4,
-    },
-
-    1600: {
-      slidesPerView: 5,
-    },
-    1900: {
-      slidesPerView: 6,
-    },
-  }
-});
-
-  if (document.documentElement.offsetWidth <= 650) {
-    sliderRecomen.destroy();
-    swiperSlide.destroy();
-    sliderFood.destroy();
-  } else {
-    sliderRecomen.enable();
-    swiperSlide.enable();
-    sliderFood.enable();
-  }  
+    formInput.style.flex = '';
+    inputSearch.style.display = '';
+    inputSearch.style.border = '';
+    headerImgLogo.style.display = '';
+    headerUserAvatar.style.display = '';
+    closeInput.style.display = '';
+  });
 };
 
-sliderSwiperMenu();
+
+const createList = (wrapper, cardList) => {
+  wrapper.textContent = '';
+
+  cardList.forEach(({snippet: {publishedAt, title, channelTitle, thumbnails: {high: {url}}}}) => {
+    let cards = `
+      <div class="card_video swiper-slide">
+                    <div class="contant_img_video">
+                        <img class="img_video" src=${url} alt="">
+                        <span class="text_time_video">4:15</span>
+                    </div>
+                    <div class="about_video">
+                        <h3 class="title_video">${title}</h3>
+                        <div class="video_time_about">
+                            <div class="view_yime">
+                            <span class="video_time_about_text view">80k views</span>
+                            <span class="video_time_about_text release_date">${publishedAt}</span>
+                            </div>
+                            <span class="video_time_about_text author_video">${channelTitle}</span>
+                        </div>
+                    </div>
+      </div>
+    `
+
+    wrapper.insertAdjacentHTML('beforeend', cards);
+  });
+};
+
+const createListGlo = () => {
+  const containerUserVideoRecomen = document.querySelector('.container_user_video_recomen');
+  const listVideo = gloAcademy;
+  console.log(listVideo);
+  createList(containerUserVideoRecomen, listVideo);
+}
+
+
+createListGlo();
+searchFoo();
