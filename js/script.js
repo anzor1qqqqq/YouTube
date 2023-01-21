@@ -51,7 +51,7 @@ const searchFoo = () => {
 const createList = (wrapper, cardList) => {
   wrapper.textContent = '';
 
-  cardList.forEach(({snippet: {publishedAt, title, channelTitle, thumbnails: {high: {url}}}}) => {
+  cardList.forEach(({snippet: {publishedAt, title, channelTitle, thumbnails: {high: {url}}}}, index) => {
     let cards = `
       <div class="card_video swiper-slide">
                     <div class="contant_img_video">
@@ -62,7 +62,7 @@ const createList = (wrapper, cardList) => {
                         <h3 class="title_video">${title}</h3>
                         <div class="video_time_about">
                             <div class="view_yime">
-                            <span class="video_time_about_text view">80k views</span>
+                            <span class="video_time_about_text view">${cardList[index].statistics ? cardList[index].statistics.viewCount + ' view' : '80k view'}</span>
                             <span class="video_time_about_text release_date">${publishedAt}</span>
                             </div>
                             <span class="video_time_about_text author_video">${channelTitle}</span>
@@ -75,12 +75,12 @@ const createList = (wrapper, cardList) => {
   });
 };
 
-const createListGlo = () => {
+ const createListGlo = () => {
   const containerUserVideoRecomen = document.querySelector('.container_user_video_recomen');
   const listVideo = gloAcademy;
 
   createList(containerUserVideoRecomen, listVideo);
-}
+} 
 
 const createListTrending = () => {
   const recomenVideoAllUser = document.querySelector('.recomen_video_all_user');
@@ -89,14 +89,14 @@ const createListTrending = () => {
   createList(recomenVideoAllUser, listTrending);
 };
 
-const createListMusic = () => {
+ const createListMusic = () => {
   const containerUserVideoMusic = document.querySelector('.container_user_video_music');
   const listMusic = music;
 
   createList(containerUserVideoMusic, listMusic);
-};
+}; 
 
-createListGlo();
+createListGlo(); 
 createListTrending();
-createListMusic();
+createListMusic(); 
 searchFoo(); 
