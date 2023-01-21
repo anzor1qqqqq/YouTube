@@ -454,6 +454,13 @@ body {
     align-items: flex-start;
 }
 
+.container_user_video_music {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
 .contant_img_video {
     position: relative;
 }
@@ -585,6 +592,10 @@ body {
 
 .video_recomen_all_user {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
     margin-bottom: 50px;
 }
 

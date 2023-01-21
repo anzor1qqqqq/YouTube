@@ -78,10 +78,25 @@ const createList = (wrapper, cardList) => {
 const createListGlo = () => {
   const containerUserVideoRecomen = document.querySelector('.container_user_video_recomen');
   const listVideo = gloAcademy;
-  console.log(listVideo);
+
   createList(containerUserVideoRecomen, listVideo);
 }
 
+const createListTrending = () => {
+  const recomenVideoAllUser = document.querySelector('.recomen_video_all_user');
+  const listTrending = trending;
+
+  createList(recomenVideoAllUser, listTrending);
+};
+
+const createListMusic = () => {
+  const containerUserVideoMusic = document.querySelector('.container_user_video_music');
+  const listMusic = music;
+
+  createList(containerUserVideoMusic, listMusic);
+};
 
 createListGlo();
-searchFoo();
+createListTrending();
+createListMusic();
+searchFoo(); 
