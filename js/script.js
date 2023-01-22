@@ -80,7 +80,8 @@ const createList = (wrapper, cardList) => {
   const listVideo = gloAcademy;
 
   createList(containerUserVideoRecomen, listVideo);
-} 
+  
+}; 
 
 const createListTrending = () => {
   const recomenVideoAllUser = document.querySelector('.recomen_video_all_user');
@@ -100,3 +101,107 @@ createListGlo();
 createListTrending();
 createListMusic(); 
 searchFoo(); 
+
+
+//API youtube
+
+const API_YOUTUBE = () => {
+let signInProfile = document.querySelector('.button_signIn');
+let signOutProfile = document.querySelector('.img_header_exit');
+
+let auth = (data) => {
+    signInProfile.classList.add('hide');
+    signOutProfile.classList.remove('hide');
+    signOutProfile.src = data.getImageUrl(); 
+    signOutProfile.alt = data.getName();
+    getChanel();
+};
+
+let noAuth = () => {
+    signInProfile.classList.remove('hide');
+    signOutProfile.classList.add('hide');
+    signOutProfile.src = '';
+    signOutProfile.alt = '';
+};
+
+let handleAuth = () => {
+    gapi.auth2.getAuthInstance().signIn();
+};
+
+let handleSignOut = () => {
+    gapi.auth2.getAuthInstance().signOut();
+};
+
+let updateStatusAuth = (data) => {
+    data.isSignedIn.listen(() => {
+        updateStatusAuth(data);
+    });
+
+    if (data.isSignedIn.get()) {
+        let userData = data.currentUser.get().getBasicProfile();
+        auth(userData);    
+    } else {
+        noAuth();
+    }
+};
+ 
+function initClient() {
+    gapi.client.init({
+        //      'apiKey': API_KEY,
+        'clientId': CLIENT_ID,
+        'scope': 'https://www.googleapis.com/auth/youtube.readonly',
+        'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest']
+    }).then(() => {
+        updateStatusAuth(gapi.auth2.getAuthInstance());
+        signInProfile.addEventListener('click', handleAuth);
+        signOutProfile.addEventListener('click', handleSignOut);
+    });//.catch(() => {
+        //signInProfile.removeEventListener('click', handleAuth);
+        //signOutProfile.removeEventListener('click', handleSignOut);
+       // alert('Авторизация невозможна');
+    //});
+};
+
+  gapi.load('client:auth2', initClient);
+
+  let menuNav = () => {
+    let navMenuMore = document.querySelector('.nav-menu-more');
+    let showMore = document.querySelector('.show-more');
+
+    showMore.addEventListener('click', (event) => {
+        event.preventDefault();
+        navMenuMore.classList.toggle('nav-menu-more-show');
+    });
+  };
+
+  let loadVideos = () => {
+    searchRequest('UCVswRUcKC-M35RzgPRv8qUg', (data) => {
+        createList(gloAcademyList, data);
+    });
+  };
+
+  let formSearch = document.querySelector('.form_search');
+
+    formSearch.addEventListener('submit', (event) => {
+        event.preventDefault();
+        let value = formSearch.elements.search.value;
+        searchRequest(value, data => {
+            createList(gloAcademyList, data);
+        });
+  });
+
+  let searchRequest = (searchText, callback, maxResult = 12) => {
+        gapi.client.youtube.search.list({
+            part: 'snippet',
+            q: searchText,
+            maxResult,
+            order: 'relevance',
+        }).execute(response => {
+            callback(response.item);
+        });
+    };
+
+menuNav();
+};
+
+API_YOUTUBE();
